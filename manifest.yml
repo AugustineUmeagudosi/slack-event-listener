@@ -13,13 +13,13 @@ features:
     always_online: true
   slash_commands:
     - command: /bot
-      url: https://9c01-102-89-32-183.ngrok.io/slack/events
+      url: https://slack-messenger.herokuapp.com/bot
       description: Initiate a conversation with the bot
       usage_hint: "hello"
       should_escape: false
 oauth_config:
   redirect_urls:
-    - https://0a97-102-89-32-9.ngrok.io/auth/callback
+    - https://slack-event-listener.herokuapp.com/auth/callback
   scopes:
     user:
       - channels:read
@@ -53,7 +53,7 @@ oauth_config:
 settings:
   interactivity:
     is_enabled: true
-    request_url: https://9c01-102-89-32-183.ngrok.io/slack/events # e.g. https://bot.herokuapp.com/messages
+    request_url: https://slack-event-listener.herokuapp.com/slack/events
   org_deploy_enabled: false
   socket_mode_enabled: false
   token_rotation_enabled: false
