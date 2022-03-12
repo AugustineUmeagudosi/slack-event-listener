@@ -19,7 +19,6 @@ app.message('hello', async ({ message, say }) => {
 // The echo command simply echoes on command
 app.command('/bot', async ({ command, ack, respond }) => {
     const hello = readFile('welcome.txt');
-    hello.text = `Hey there <@${message.user}>!`;
     await ack();
     await respond(hello);
 });
