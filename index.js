@@ -1,7 +1,7 @@
 require("dotenv").config();
-const { App, ExpressReceiver } = require('@slack/bolt');
-const axios = require("axios");
+const { App } = require('@slack/bolt');
 const { readFile } = require('./readFile');
+const { recordUserFeeling, recordUserHobbies } = require('./services');
 
 // Initializes your app with your bot token and signing secret
 const app = new App({
@@ -44,27 +44,3 @@ app.action('hobbies', async ({ body, ack, say }) => {
   await app.start(process.env.PORT || 3000);
   console.log('⚡️ Bolt app is running!');
 })();
-
-
-async function recordUserFeeling({ body, ack, say }){
-    const feelingAPI = `${process.env.API_URL}/feeling`;
-    const {user, actions} = body;
-    axios.post(feelingAPI, {user, actions});
-
-    const hobbies = readFile('hobbies.txt');
-    hobbies.text = `Hey there <@${user.id}>!`;
-    await ack();
-    await say(hobbies);
-}
-
-async function recordUserHobbies({ body, ack, say }){
-    const hobbiesAPI = `${process.env.API_URL}/hobbies`;
-    const {user, actions} = body;
-    axios.post(hobbiesAPI, {user, actions});
-
-    // Acknowledge the action
-    const thanks = readFile('thanks.txt');
-    thanks.text = `Hey there <@${user.id}>!`;
-    await ack();
-    await say(thanks);
-}
