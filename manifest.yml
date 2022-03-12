@@ -13,7 +13,7 @@ features:
     always_online: true
   slash_commands:
     - command: /bot
-      url: https://slack-messenger.herokuapp.com/bot
+      url: https://slack-event-listener.herokuapp.com/slack/events
       description: Initiate a conversation with the bot
       usage_hint: "hello"
       should_escape: false

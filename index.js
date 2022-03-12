@@ -16,6 +16,14 @@ app.message('hello', async ({ message, say }) => {
     await say(hello);
 });
 
+// The echo command simply echoes on command
+app.command('/bot', async ({ command, ack, respond }) => {
+    const hello = readFile('welcome.txt');
+    hello.text = `Hey there <@${message.user}>!`;
+    await ack();
+    await respond(hello);
+});
+
 app.action('doing_well', async ({ body, ack, say }) => {
     recordUserFeeling({ body, ack, say });
 });
@@ -53,7 +61,6 @@ async function recordUserFeeling({ body, ack, say }){
 async function recordUserHobbies({ body, ack, say }){
     const hobbiesAPI = `${process.env.API_URL}/hobbies`;
     const {user, actions} = body;
-    console.log(user, actions);
     axios.post(hobbiesAPI, {user, actions});
 
     // Acknowledge the action
