@@ -1,0 +1,58 @@
+{
+	"blocks": [
+		{
+			"type": "input",
+			"element": {
+				"type": "checkboxes",
+				"options": [
+					{
+						"text": {
+							"type": "plain_text",
+							"text": "Football",
+							"emoji": true
+						},
+						"value": "Football"
+					},
+					{
+						"text": {
+							"type": "plain_text",
+							"text": "Music",
+							"emoji": true
+						},
+						"value": "Music"
+					},
+					{
+						"text": {
+							"type": "plain_text",
+							"text": "Sleep",
+							"emoji": true
+						},
+						"value": "Sleep"
+					},
+					{
+						"text": {
+							"type": "plain_text",
+							"text": "Movies",
+							"emoji": true
+						},
+						"value": "Movies"
+					},
+					{
+						"text": {
+							"type": "plain_text",
+							"text": "Basketball",
+							"emoji": true
+						},
+						"value": "Basketball"
+					}
+				],
+				"action_id": "hobbies"
+			},
+			"label": {
+				"type": "plain_text",
+				"text": "What are your favorite hobbies",
+				"emoji": true
+			}
+		}
+	]
+}

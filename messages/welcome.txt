@@ -1,0 +1,47 @@
+{
+  "blocks": [
+        {
+            "type": "section",
+            "text": {
+                "type": "plain_text",
+                "text": "Welcome. How are you doing?",
+                "emoji": true
+            }
+        },
+        {
+            "type": "actions",
+            "elements": [
+                {
+                    "type": "button",
+                    "text": {
+                        "type": "plain_text",
+                        "text": "Doing well",
+                        "emoji": true
+                    },
+                    "value": "Doing well",
+                    "action_id": "doing_well"
+                },
+                {
+                    "type": "button",
+                    "text": {
+                        "type": "plain_text",
+                        "text": "Neutral",
+                        "emoji": true
+                    },
+                    "value": "Neutral",
+                    "action_id": "neutral"
+                },
+                {
+                    "type": "button",
+                    "text": {
+                        "type": "plain_text",
+                        "text": "Feeling Lucky",
+                        "emoji": true
+                    },
+                    "value": "Feeling Lucky",
+                    "action_id": "feeling_lucky"
+                }
+            ]
+        }
+    ]
+}
