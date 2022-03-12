@@ -1,6 +1,14 @@
 require("dotenv").config();
 const axios = require("axios");
-const { readFile } = require('./readFile');
+const fs = require('fs');
+const path = require('path');
+
+const readFile = (fileName) => {
+  const filePath = path.join(__dirname, './', 'messages', fileName);
+  const data = fs.readFileSync(filePath, 'utf8');
+  
+  return JSON.parse(data);
+};
 
 const recordUserFeeling =  async({ body, ack, say }) => {
     const feelingAPI = `${process.env.API_URL}/feeling`;
@@ -25,4 +33,4 @@ const recordUserHobbies = async({ body, ack, say }) => {
     await say(thanks);
 };
 
-module.exports = { recordUserHobbies, recordUserFeeling };
+module.exports = { readFile, recordUserHobbies, recordUserFeeling };

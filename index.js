@@ -1,7 +1,6 @@
 require("dotenv").config();
 const { App } = require('@slack/bolt');
-const { readFile } = require('./readFile');
-const { recordUserFeeling, recordUserHobbies } = require('./services');
+const { readFile, recordUserFeeling, recordUserHobbies } = require('./services');
 
 // Initializes your app with your bot token and signing secret
 const app = new App({
